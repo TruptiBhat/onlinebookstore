@@ -47,5 +47,5 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }} 
       run: |
        docker images
-       docker push rajkavala/application
+       docker push rajkavala/application:v1
       
