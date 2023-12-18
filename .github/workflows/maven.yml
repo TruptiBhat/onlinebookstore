@@ -33,7 +33,7 @@ jobs:
        cd target
        ls -lrth
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag tomcat:v1   
+      run: docker build . --file Dockerfile --tag rajkavala/application:v1   
     - name: Log in to Docker Hub
       uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
       with:
@@ -47,5 +47,5 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }} 
       run: |
        docker images
-       docker push docker.io/rajkavala/tomcat:v1
+       docker push rajkavala/application:v1
       
