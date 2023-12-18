@@ -32,6 +32,8 @@ jobs:
        mvn -B package --file pom.xml
        cd target
        ls -lrth
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag tomcat:$(date +%s)   
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
