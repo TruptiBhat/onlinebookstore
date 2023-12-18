@@ -47,5 +47,5 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }} 
       run: |
        docker images
-       docker push ${{ secrets.DOCKER_USERNAME }}/tomcat:v1
+       docker push tomcat:v1
       
