@@ -1,9 +1,9 @@
 FROM tomcat:9-jre8-alpine
-COPY /target/*.war /usr/local/tomcat/webapps/
-CMD chmod 777 /usr/local/tomcat/webapps/
-# ADD ./webapp /usr/local/tomcat/webapps/webapp
+WORKDIR /usr/local/tomcat
+RUN rm -rf webapps/*
+COPY /target/*.war webapps/
+COPY ./scripts/start_server.sh .
+RUN chmod +x start_server.sh
 EXPOSE 8080
-COPY ./scripts/start_server.sh ./start_server.sh
-CMD chmod +x ./start_server.sh
-CMD "./start_server.sh"
-#RUN ./start_server.sh
+CMD ["./start_server.sh"]
+
