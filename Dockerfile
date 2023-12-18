@@ -4,6 +4,6 @@ RUN rm -rf webapps/*
 COPY /target/*.war webapps/
 COPY ./scripts/start_server.sh .
 RUN chmod +x start_server.sh
-EXPOSE 8080
-CMD ["./start_server.sh"]
+EXPOSE 8085
+CMD ["./bin/start_server.sh"]
 
