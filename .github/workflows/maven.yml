@@ -49,3 +49,4 @@ jobs:
        docker images
        docker push rajkavala/application:v1
       
+      
